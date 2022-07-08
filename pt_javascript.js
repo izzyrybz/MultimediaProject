@@ -27,10 +27,12 @@ Belem = document.getElementById('Belem');
 
 MapGif = document.getElementById('MapGif');
 BelemVideo = document.getElementById('BelemVideo');
-audioMark = document.getElementById('audioMark');
+audio = document.getElementById('audio');
+source = document.getElementById('audioSource');
+source.src = elm.getAttribute('data-value');
 
 if(location.hash != ''){
-  console.log(location.hash);
+  //console.log(location.hash);
   place = location.hash.replace('#','');
   eval(place);
 
@@ -40,7 +42,7 @@ if(location.hash != ''){
 BelemVideo.ontimeupdate = function() {UpdateImage()};
 
 function UpdateImage(){
-  console.log(MapGif.src)
+  //console.log(MapGif.src)
   if (CampoGranTime < BelemVideo.currentTime && BelemVideo.currentTime < EntreCampTime){
     showCampoGrand();
       
@@ -105,11 +107,12 @@ function showCampoGrand(){
     //This is hardcoded and will be different for each pc
     correctedSrc = MapGif.src.replace('file:///C:/Users/isabe/Documents/Multimedia','')
     
+    
+    audioSource.src= "Audio/pt/Campo_Grande_pt.mp3"
 
     if (correctedSrc === "/pictures_and_gifs/maps/Campo_v2.gif"){
     }else{
       BelemVideo.currentTime = CampoGranTime;
-      audioMark.src= "Audio/campoGrande_swedish.mp3"
       MapGif.src = "pictures_and_gifs/maps/Campo_v2.gif";
     }
    
@@ -127,16 +130,20 @@ function showEntreCampos(){
   LxFactory.style.display = "none";
   Maat.style.display = "none";
   Belem.style.display = "none";
-  //audioMark.src= "/Audio/EntreCampos_swedish.mp3"
+  //audioSource.src= "/audioSource/EntreCampos_swedish.mp3"
 
 
   //This is hardcoded and will be different for each pc
-    correctedSrc = MapGif.src.replace('file:///C:/Users/isabe/Documents/Multimedia','')
-    
+  correctedSrc = MapGif.src.replace('file:///C:/Users/isabe/Documents/Multimedia','')
+  audioSource.src= ""
+  
 
     if (correctedSrc === "/pictures_and_gifs/maps/EntreCampo.gif"){
     }else{
       BelemVideo.currentTime = EntreCampTime;
+      
+
+      
       MapGif.src = "pictures_and_gifs/maps/EntreCampo.gif";
     }
 
@@ -165,6 +172,8 @@ function showCampoPenqueno(){
     if (correctedSrc === "/pictures_and_gifs/maps/peq.gif"){
     }else{
       BelemVideo.currentTime = CampoPenqTime;
+      audioSource.src= ""
+      
       MapGif.src = "pictures_and_gifs/maps/peq.gif";
     }
 
@@ -185,10 +194,13 @@ function showSaldanha(){
 
   correctedSrc = MapGif.src.replace('file:///C:/Users/isabe/Documents/Multimedia','')
     
+  audio.src= "Audio/pt/saldanha_pt.mp3"
+  console.log(audio.src)
 
   if (correctedSrc === "/pictures_and_gifs/maps/Sal.gif"){
   }else{
     BelemVideo.currentTime = SaldanhaTime;
+    audio.src= "Audio/pt/saldanha_pt.mp3"
     MapGif.src = "pictures_and_gifs/maps/Sal.gif";
   }
 
@@ -209,10 +221,14 @@ function showParqueEduardo(){
 
   correctedSrc = MapGif.src.replace('file:///C:/Users/isabe/Documents/Multimedia','')
     
+  audio.src= "Audio/pt/ParqueEduardoVII_pt.mp3"
+  console.log(audio.src)
 
   if (correctedSrc === "/pictures_and_gifs/maps/Parq.gif"){
   }else{
     BelemVideo.currentTime = ParqueEduTime;
+    audio.src= "Audio/pt/ParqueEduardoVII_pt.mp3"
+
     MapGif.src = "pictures_and_gifs/maps/Parq.gif";
   }
  
@@ -230,6 +246,7 @@ function showMarques(){
   Maat.style.display = "none";
   Belem.style.display = "none";
 
+  audio.src= "Audio/pt/MarquesDePompal_pt.mp3"
 
   correctedSrc = MapGif.src.replace('file:///C:/Users/isabe/Documents/Multimedia','')
     
@@ -237,6 +254,7 @@ function showMarques(){
   if (correctedSrc === "/pictures_and_gifs/maps/Marq.gif"){
   }else{
     BelemVideo.currentTime = MarquesTime;
+    audio.src= "Audio/pt/MarquesDePompal_pt.mp3"
     MapGif.src = "pictures_and_gifs/maps/Marq.gif";
   }
  
@@ -259,9 +277,14 @@ function showAmoreiras(){
   correctedSrc = MapGif.src.replace('file:///C:/Users/isabe/Documents/Multimedia','')
     
 
+  audio.src= "Audio/pt/Amoreiras_pt.mp3"
+
+
   if (correctedSrc === "/pictures_and_gifs/maps/Amodoras.gif"){
   }else{
     BelemVideo.currentTime = AmoreirasTime;
+    audio.src= "Audio/pt/Amoreiras_pt.mp3"
+
     MapGif.src = "pictures_and_gifs/maps/Amodoras.gif";
   } 
 }
@@ -279,10 +302,12 @@ function showSantos(){
   Belem.style.display = "none";
   correctedSrc = MapGif.src.replace('file:///C:/Users/isabe/Documents/Multimedia','')
 
+  audio.src= ""
 
   if (correctedSrc === "/pictures_and_gifs/maps/santos.gif"){
   }else{
     BelemVideo.currentTime = SantosTime;
+
     MapGif.src = "pictures_and_gifs/maps/santos.gif";
   }
  
@@ -301,6 +326,7 @@ function showLxFactory(){
   Belem.style.display = "none";
   correctedSrc = MapGif.src.replace('file:///C:/Users/isabe/Documents/Multimedia','')
 
+  audio.src= ""
 
   if (correctedSrc === "/pictures_and_gifs/maps/lx.gif"){
   }else{
@@ -322,11 +348,15 @@ function showMaat(){
   Maat.style.display = "block";
   Belem.style.display = "none";
   correctedSrc = MapGif.src.replace('file:///C:/Users/isabe/Documents/Multimedia','')
+  audio.src= "Audio/pt/Maat_pt.mp3"
 
 
   if (correctedSrc === "/pictures_and_gifs/maps/maat.gif"){
   }else{
     BelemVideo.currentTime = MaatTime;
+    audio.src= "Audio/pt/Maat_pt.mp3"
+
+
     MapGif.src = "pictures_and_gifs/maps/maat.gif";
   }
  
@@ -346,9 +376,14 @@ function showBelem(){
   Belem.style.display = "block";
   correctedSrc = MapGif.src.replace('file:///C:/Users/isabe/Documents/Multimedia','')
 
+  audio.src= "Audio/pt/pasteis_belem_pt.mp3"
+
   if (correctedSrc === "/pictures_and_gifs/maps/belem.gif"){
   }else{
     BelemVideo.currentTime = BelemTime;
+    audio.src= "Audio/pt/pasteis_belem_pt.mp3"
+
+
     MapGif.src = "pictures_and_gifs/maps/belem.gif";
   }
  

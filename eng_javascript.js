@@ -27,7 +27,9 @@ Belem = document.getElementById('Belem');
 
 MapGif = document.getElementById('MapGif');
 BelemVideo = document.getElementById('BelemVideo');
-audioMark = document.getElementById('audioMark');
+audio = document.getElementById('audio');
+source = document.getElementById('audioSource');
+source.src = elm.getAttribute('data-value');
 
 if(location.hash != ''){
   //console.log(location.hash);
@@ -106,7 +108,7 @@ function showCampoGrand(){
     correctedSrc = MapGif.src.replace('file:///C:/Users/isabe/Documents/Multimedia','')
     
     
-    audioMark.src= "Audio/eng/Campo_Grande_brit.mp3"
+    audioSource.src= "Audio/eng/Campo_Grande_brit.mp3"
 
     if (correctedSrc === "/pictures_and_gifs/maps/Campo_v2.gif"){
     }else{
@@ -128,13 +130,13 @@ function showEntreCampos(){
   LxFactory.style.display = "none";
   Maat.style.display = "none";
   Belem.style.display = "none";
-  //audioMark.src= "/Audio/EntreCampos_swedish.mp3"
+  //audioSource.src= "/audioSource/EntreCampos_swedish.mp3"
 
 
   //This is hardcoded and will be different for each pc
   correctedSrc = MapGif.src.replace('file:///C:/Users/isabe/Documents/Multimedia','')
-  audioMark.src= ""
-  console.log(audioMark.src)
+  audioSource.src= ""
+  
 
     if (correctedSrc === "/pictures_and_gifs/maps/EntreCampo.gif"){
     }else{
@@ -170,7 +172,7 @@ function showCampoPenqueno(){
     if (correctedSrc === "/pictures_and_gifs/maps/peq.gif"){
     }else{
       BelemVideo.currentTime = CampoPenqTime;
-      audioMark.src= ""
+      audioSource.src= ""
       
       MapGif.src = "pictures_and_gifs/maps/peq.gif";
     }
@@ -192,13 +194,13 @@ function showSaldanha(){
 
   correctedSrc = MapGif.src.replace('file:///C:/Users/isabe/Documents/Multimedia','')
     
-  audioMark.src= "Audio/eng/saldanha_brit.mp3"
-  console.log(audioMark.src)
+  audio.src= "Audio/eng/saldanha_brit.mp3"
+  console.log(audio.src)
 
   if (correctedSrc === "/pictures_and_gifs/maps/Sal.gif"){
   }else{
     BelemVideo.currentTime = SaldanhaTime;
-    audioMark.src= "Audio/eng/saldanha_brit.mp3"
+    audio.src= "Audio/eng/saldanha_brit.mp3"
     MapGif.src = "pictures_and_gifs/maps/Sal.gif";
   }
 
@@ -219,11 +221,13 @@ function showParqueEduardo(){
 
   correctedSrc = MapGif.src.replace('file:///C:/Users/isabe/Documents/Multimedia','')
     
+  audio.src= "Audio/eng/ParqueEduardoVII_brit.mp3"
+  console.log(audio.src)
 
   if (correctedSrc === "/pictures_and_gifs/maps/Parq.gif"){
   }else{
     BelemVideo.currentTime = ParqueEduTime;
-    audioMark.src= "Audio/eng/ParqueEduardoVII_brit.mp3"
+    audio.src= "Audio/eng/ParqueEduardoVII_brit.mp3"
 
     MapGif.src = "pictures_and_gifs/maps/Parq.gif";
   }
@@ -242,6 +246,7 @@ function showMarques(){
   Maat.style.display = "none";
   Belem.style.display = "none";
 
+  audio.src= "Audio/eng/MarquesDePompal_brit.mp3"
 
   correctedSrc = MapGif.src.replace('file:///C:/Users/isabe/Documents/Multimedia','')
     
@@ -249,7 +254,7 @@ function showMarques(){
   if (correctedSrc === "/pictures_and_gifs/maps/Marq.gif"){
   }else{
     BelemVideo.currentTime = MarquesTime;
-    audioMark.src= "Audio/eng/MarquesDePompal_brit.mp3"
+    audio.src= "Audio/eng/MarquesDePompal_brit.mp3"
 
     MapGif.src = "pictures_and_gifs/maps/Marq.gif";
   }
@@ -271,12 +276,14 @@ function showAmoreiras(){
 
 
   correctedSrc = MapGif.src.replace('file:///C:/Users/isabe/Documents/Multimedia','')
+  audio.src= "Audio/eng/Amoreiras_brit.mp3"
+
     
 
   if (correctedSrc === "/pictures_and_gifs/maps/Amodoras.gif"){
   }else{
     BelemVideo.currentTime = AmoreirasTime;
-    audioMark.src= "Audio/eng/Amoreiras_brit.mp3"
+    audio.src= "Audio/eng/Amoreiras_brit.mp3"
 
     MapGif.src = "pictures_and_gifs/maps/Amodoras.gif";
   } 
@@ -295,11 +302,11 @@ function showSantos(){
   Belem.style.display = "none";
   correctedSrc = MapGif.src.replace('file:///C:/Users/isabe/Documents/Multimedia','')
 
+  audio.src= ""
 
   if (correctedSrc === "/pictures_and_gifs/maps/santos.gif"){
   }else{
     BelemVideo.currentTime = SantosTime;
-    audioMark.src= ""
 
     MapGif.src = "pictures_and_gifs/maps/santos.gif";
   }
@@ -319,6 +326,7 @@ function showLxFactory(){
   Belem.style.display = "none";
   correctedSrc = MapGif.src.replace('file:///C:/Users/isabe/Documents/Multimedia','')
 
+  audio.src= ""
 
   if (correctedSrc === "/pictures_and_gifs/maps/lx.gif"){
   }else{
@@ -340,12 +348,13 @@ function showMaat(){
   Maat.style.display = "block";
   Belem.style.display = "none";
   correctedSrc = MapGif.src.replace('file:///C:/Users/isabe/Documents/Multimedia','')
+  audio.src= "Audio/eng/Maat_brit.mp3"
 
 
   if (correctedSrc === "/pictures_and_gifs/maps/maat.gif"){
   }else{
     BelemVideo.currentTime = MaatTime;
-    audioMark.src= "Audio/eng/Maat_brit.mp3"
+    audio.src= "Audio/eng/Maat_brit.mp3"
 
     MapGif.src = "pictures_and_gifs/maps/maat.gif";
   }
@@ -366,10 +375,13 @@ function showBelem(){
   Belem.style.display = "block";
   correctedSrc = MapGif.src.replace('file:///C:/Users/isabe/Documents/Multimedia','')
 
+  audio.src= "Audio/eng/pasteis_belem_brit.mp3"
+
   if (correctedSrc === "/pictures_and_gifs/maps/belem.gif"){
   }else{
     BelemVideo.currentTime = BelemTime;
-    audioMark.src= "Audio/eng/pasteis_belem_brit.mp3"
+    audio.src= "Audio/eng/pasteis_belem_brit.mp3"
+
 
     MapGif.src = "pictures_and_gifs/maps/belem.gif";
   }
