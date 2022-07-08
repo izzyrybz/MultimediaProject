@@ -9,6 +9,7 @@ const SantosTime=300;
 const LxFactoryTime= 350;
 const MaatTime=400;
 const BelemTime= 420;
+const hardCodedSource = 'file:///C:/Users/isabe/Documents/Multimedia'
 
 
 
@@ -29,7 +30,6 @@ MapGif = document.getElementById('MapGif');
 BelemVideo = document.getElementById('BelemVideo');
 audio = document.getElementById('audio');
 source = document.getElementById('audioSource');
-source.src = elm.getAttribute('data-value');
 
 if(location.hash != ''){
   //console.log(location.hash);
@@ -105,14 +105,15 @@ function showCampoGrand(){
     Belem.style.display = "none";
     
     //This is hardcoded and will be different for each pc
-    correctedSrc = MapGif.src.replace('file:///C:/Users/isabe/Documents/Multimedia','')
+    correctedSrc = MapGif.src.replace(hardCodedSource,'')
     
     
-    audioSource.src= "Audio/pt/Campo_Grande_pt.mp3"
 
     if (correctedSrc === "/pictures_and_gifs/maps/Campo_v2.gif"){
     }else{
       BelemVideo.currentTime = CampoGranTime;
+      audioSource.src= "Audio/pt/Campo_Grande_pt.mp3";
+
       MapGif.src = "pictures_and_gifs/maps/Campo_v2.gif";
     }
    
@@ -134,7 +135,7 @@ function showEntreCampos(){
 
 
   //This is hardcoded and will be different for each pc
-  correctedSrc = MapGif.src.replace('file:///C:/Users/isabe/Documents/Multimedia','')
+  correctedSrc = MapGif.src.replace(hardCodedSource,'')
   audioSource.src= ""
   
 
@@ -166,7 +167,7 @@ function showCampoPenqueno(){
     Maat.style.display = "none";
     Belem.style.display = "none";
 
-    correctedSrc = MapGif.src.replace('file:///C:/Users/isabe/Documents/Multimedia','')
+    correctedSrc = MapGif.src.replace(hardCodedSource,'')
     
 
     if (correctedSrc === "/pictures_and_gifs/maps/peq.gif"){
@@ -192,15 +193,15 @@ function showSaldanha(){
   Maat.style.display = "none";
   Belem.style.display = "none";
 
-  correctedSrc = MapGif.src.replace('file:///C:/Users/isabe/Documents/Multimedia','')
+  correctedSrc = MapGif.src.replace(hardCodedSource,'')
     
-  audio.src= "Audio/pt/saldanha_pt.mp3"
+  //audio.src= "Audio/pt/saldanha_pt.mp3"
   console.log(audio.src)
 
   if (correctedSrc === "/pictures_and_gifs/maps/Sal.gif"){
   }else{
     BelemVideo.currentTime = SaldanhaTime;
-    audio.src= "Audio/pt/saldanha_pt.mp3"
+    audio.src= "Audio/pt/saldanha_pt.mp3";
     MapGif.src = "pictures_and_gifs/maps/Sal.gif";
   }
 
@@ -219,9 +220,9 @@ function showParqueEduardo(){
   Maat.style.display = "none";
   Belem.style.display = "none";
 
-  correctedSrc = MapGif.src.replace('file:///C:/Users/isabe/Documents/Multimedia','')
+  correctedSrc = MapGif.src.replace(hardCodedSource,'')
     
-  audio.src= "Audio/pt/ParqueEduardoVII_pt.mp3"
+  //audio.src= "Audio/pt/ParqueEduardoVII_pt.mp3"
   console.log(audio.src)
 
   if (correctedSrc === "/pictures_and_gifs/maps/Parq.gif"){
@@ -246,9 +247,9 @@ function showMarques(){
   Maat.style.display = "none";
   Belem.style.display = "none";
 
-  audio.src= "Audio/pt/MarquesDePompal_pt.mp3"
+  //audio.src= "Audio/pt/MarquesDePompal_pt.mp3"
 
-  correctedSrc = MapGif.src.replace('file:///C:/Users/isabe/Documents/Multimedia','')
+  correctedSrc = MapGif.src.replace(hardCodedSource,'')
     
 
   if (correctedSrc === "/pictures_and_gifs/maps/Marq.gif"){
@@ -274,10 +275,10 @@ function showAmoreiras(){
   Belem.style.display = "none";
 
 
-  correctedSrc = MapGif.src.replace('file:///C:/Users/isabe/Documents/Multimedia','')
+  correctedSrc = MapGif.src.replace(hardCodedSource,'')
     
 
-  audio.src= "Audio/pt/Amoreiras_pt.mp3"
+  //audio.src= "Audio/pt/Amoreiras_pt.mp3"
 
 
   if (correctedSrc === "/pictures_and_gifs/maps/Amodoras.gif"){
@@ -300,7 +301,7 @@ function showSantos(){
   LxFactory.style.display = "none";
   Maat.style.display = "none";
   Belem.style.display = "none";
-  correctedSrc = MapGif.src.replace('file:///C:/Users/isabe/Documents/Multimedia','')
+  correctedSrc = MapGif.src.replace(hardCodedSource,'')
 
   audio.src= ""
 
@@ -324,7 +325,7 @@ function showLxFactory(){
   LxFactory.style.display = "block";
   Maat.style.display = "none";
   Belem.style.display = "none";
-  correctedSrc = MapGif.src.replace('file:///C:/Users/isabe/Documents/Multimedia','')
+  correctedSrc = MapGif.src.replace(hardCodedSource,'')
 
   audio.src= ""
 
@@ -347,8 +348,8 @@ function showMaat(){
   LxFactory.style.display = "none";
   Maat.style.display = "block";
   Belem.style.display = "none";
-  correctedSrc = MapGif.src.replace('file:///C:/Users/isabe/Documents/Multimedia','')
-  audio.src= "Audio/pt/Maat_pt.mp3"
+  correctedSrc = MapGif.src.replace(hardCodedSource,'')
+  //audio.src= "Audio/pt/Maat_pt.mp3"
 
 
   if (correctedSrc === "/pictures_and_gifs/maps/maat.gif"){
@@ -374,9 +375,9 @@ function showBelem(){
   LxFactory.style.display = "none";
   Maat.style.display = "none";
   Belem.style.display = "block";
-  correctedSrc = MapGif.src.replace('file:///C:/Users/isabe/Documents/Multimedia','')
+  correctedSrc = MapGif.src.replace(hardCodedSource,'')
 
-  audio.src= "Audio/pt/pasteis_belem_pt.mp3"
+  //audio.src= "Audio/pt/pasteis_belem_pt.mp3"
 
   if (correctedSrc === "/pictures_and_gifs/maps/belem.gif"){
   }else{
